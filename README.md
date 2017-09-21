@@ -93,6 +93,29 @@ function compute(f,number){
 compute(square,2) // 4
 compute(cube,3); //27
 ```
+## Promise:
+```javascript
+//To avoid callback hell, we have promise. Much concise, readable and better error handling.
+function concat(firstString, secondString, callback){ 
+    var a = firstString+secondString; 
+    callback(a); 
+} 
+concat("Virat"," Kohli", console.log); 
+
+//Using promise
+
+function concatPromise(firstString,secondString){ 
+    return Promise.resolve(firstString+secondString); 
+} 
+concatPromise("Virat ", "Kohli").then(console.log); 
+
+//error Handling 
+concatPromise("Virat ", "Kohli").then(console.log) 
+   .catch(function(error){ 
+      console.log("error is :" + error);  
+   } 
+ 
+```
 
 ## var versus let / const
 
