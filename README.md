@@ -117,6 +117,71 @@ concatPromise("Virat ", "Kohli").then(console.log)
  
 ```
 
+## Write Modularized code:
+```javascript
+<script src="scripts/anyPlugin.js" type="text/javascript"></script> 
+<script src="scripts/jquery.js" type="text/javascript"></script>
+//here problem is anyPlugin.js requires jquery so we need to change the sequence as:
+<script src="scripts/anyPlugin.js" type="text/javascript"></script> 
+<script src="scripts/jquery.js" type="text/javascript"></script>
+
+//We have better solution: Require.js
+//Consider we have 3 modules as purchase credit and product  
+
+//purchase.js 
+define(["credits","products"], function(credits,products) { 
+   console.log("Function : purchaseProduct"); 
+  return { 
+    purchaseProduct: function() { 
+     var credit = credits.getCredits(); 
+      if(credit > 0){ 
+        products.reserveProduct(); 
+        return true; 
+      } 
+      return false; 
+    } 
+  } 
+}); 
+ 
+//Products.js 
+define(function(products) { 
+  return { 
+    reserveProduct: function() { 
+      console.log("Function : reserveProduct"); 
+       return true; 
+    } 
+  } 
+}); 
+ 
+//credit.js 
+define(function() { 
+  console.log("Function : getCredits"); 
+   return { 
+    getCredits: function() { 
+      var credits = "100"; 
+      return credits; 
+    } 
+  } 
+}); 
+
+//The purchase is depend on product and credit. We have injected both in purchase. 
+//To specify which file should be loaded first, we have below syntax:
+
+<script data-main="scripts/main" src="scripts/require.js"></script> 
+
+//Here data-main attribute defines the initialization point, We don't need to write script tag for purchase.js, credit.js, product.js files.
+//main.js file will inject "purchase" module and further purchase.js will inject product and credit modules.
+
+//main.js
+require(["purchase"],function(purchase){
+  purchase.purchaseProduct();
+});
+
+
+
+
+```
+
 ## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values
