@@ -1005,7 +1005,7 @@ Promise.all(promises)
 
 ## Generators
 
-Similar to how [Promises](https://github.com/DrkSephy/es6-cheatsheet#promises) allow us to avoid
+Similar to how [Promises](https://github.com/prashant7090/Effective-ES6#promises) allow us to avoid
 [callback hell](http://callbackhell.com/), Generators allow us to flatten our code - giving our
 asynchronous code a synchronous feel. Generators are essentially functions which we can
 [pause their execution](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield)
@@ -1097,7 +1097,7 @@ iterateGenerator(function* getData() {
 We were able to reuse our implementation to use our Generator as before, which shows their power. While Generators
 and Promises allow us to write asynchronous code in a synchronous manner while retaining the ability to propagate
 errors in a nice way, we can actually begin to utilize a simpler construction that provides the same benefits:
-[async-await](https://github.com/DrkSephy/es6-cheatsheet#async-await).
+[async-await](https://github.com/prashant7090/Effective-ES6#async-await).
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
