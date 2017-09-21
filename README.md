@@ -21,6 +21,54 @@ snippet examples for your day to day workflow. Contributions are welcome!
 - [Async Await](#async-await)
 - [Getter/Setter functions](#getter-and-setter-functions)
 
+## Avoid Evil Twin
+Use "===" and "!==":  it checks the type first and then value. Don't use "==" operator.
+
+## Function as object
+
+```javascript
+User = function() {  
+    this.name = "Prashant";  
+    this.sayHello = function(name){  //Private function  
+         console.log("Hello + name");   
+    }  
+     return function(){ // public function  
+       console.log("I should be able to call from outside");  
+     }                
+} 
+```
+sayHello is the private function as it does not return anything. We need to create the instance to access it.
+
+```javascript
+user1 = new User; 
+user1.name 
+user1.sayHello
+//public function should return something which is callable as below:
+User()()
+```
+
+## Closure: self-invoking functions
+
+```javascript
+
+function intro() { 
+    name = Prashant; 
+    return function () { 
+        console.log('Hi ' + name); 
+    } 
+}
+
+introMe = intro();  
+introMe(); //Hi Prashant 
+OR 
+intro()(); //Hi Prashant  
+
+//Example 2: 
+
+'''
+
+
+
 ## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values
