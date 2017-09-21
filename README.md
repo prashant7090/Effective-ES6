@@ -46,6 +46,7 @@ user1.sayHello
 //public function should return something which is callable as below:
 User()()
 ```
+**Closure**
 > **Closure**: We can access the variables from function even after function has been returned.
 
 ```javascript
