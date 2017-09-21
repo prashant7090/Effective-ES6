@@ -76,6 +76,24 @@ sayName(); //Hi Prashant
 
 ```
 
+## Higher Order function:  Pass function as parameter
+```javascript
+function square(number){ 
+    return number*number; 
+} 
+function cube(number){ 
+    return number*number*number; 
+}
+
+//Takes first argument as function
+function compute(f,number){ 
+    console.log(f(number)); 
+} 
+
+compute(square,2) // 4
+compute(cube,3); //27
+```
+
 ## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values
