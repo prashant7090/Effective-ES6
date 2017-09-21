@@ -46,6 +46,35 @@ user1.sayHello
 //public function should return something which is callable as below:
 User()()
 ```
+> **Closure**: We can access the variables from function even after function has been returned.
+
+```javascript
+function intro() { 
+    name = "Prashant"; 
+    return function () { 
+        console.log('Hi ' + name); 
+    } 
+} 
+
+sayName = intro(); //point 1
+sayName(); //Hi Prashant
+//Here inner function can access variable name even after it has been returned(point 1).  
+
+//Example 2
+ for (var i = 1; i < 10; i++) {
+     (function(index) {
+         setTimeout(function() { console.log(index); }, index * 1000);
+     })(i);
+ }
+// We have bound the variable i to self invoking function 
+
+//Eqivalent in ES -6 
+ for (let i = 1; i < 10; i++) {
+         setTimeout(function() { console.log("i: " + i); }, i * 1000);
+ }
+
+```
+
 ## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values
