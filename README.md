@@ -46,29 +46,6 @@ user1.sayHello
 //public function should return something which is callable as below:
 User()()
 ```
-
-## Closure: self-invoking functions
-
-```javascript
-
-function intro() { 
-    name = Prashant; 
-    return function () { 
-        console.log('Hi ' + name); 
-    } 
-}
-
-introMe = intro();  
-introMe(); //Hi Prashant 
-OR 
-intro()(); //Hi Prashant  
-
-//Example 2: 
-
-'''
-
-
-
 ## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values
