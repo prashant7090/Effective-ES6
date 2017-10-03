@@ -4,7 +4,12 @@ A cheatsheet containing ES2015 [ES6] tips, tricks, best practices and code
 snippet examples for your day to day workflow. Contributions are welcome!
 
 ## Table of Contents
-
+- [Avoid evil twin](#avoid-evil-twin)
+- [Function as object](#function-as-object)
+- [Closure](#Closure)
+- [Higher Order function](#higher-order-function)
+- [Promise](#promise)
+- [Write Modularized code](#write-modularized-code)
 - [var versus let / const](#var-versus-let--const)
 - [Replacing IIFEs with Blocks](#replacing-iifes-with-blocks)
 - [Arrow Functions](#arrow-functions)
@@ -20,6 +25,7 @@ snippet examples for your day to day workflow. Contributions are welcome!
 - [Generators](#generators)
 - [Async Await](#async-await)
 - [Getter/Setter functions](#getter-and-setter-functions)
+
 
 ## Avoid Evil Twin
 Use "===" and "!==":  it checks the type first and then value. Don't use "==" operator.
@@ -76,7 +82,7 @@ sayName(); //Hi Prashant
 
 ```
 
-## Higher Order function:  Pass function as parameter
+## Higher Order function:  
 ```javascript
 function square(number){ 
     return number*number; 
