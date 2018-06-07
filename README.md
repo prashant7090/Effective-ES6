@@ -30,6 +30,13 @@ snippet examples for your day to day workflow. Contributions are welcome!
 ## Avoid Evil Twin
 Use "===" and "!==":  it checks the type first and then value. Don't use "==" operator.
 
+EX: 
+'' == 0   // true
+0 == '0' // true
+'' == '0' // false
+
+For more information read Truthy and Falsy
+
 ## Function as object
 
 ```javascript
